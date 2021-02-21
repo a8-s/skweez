@@ -1,7 +1,12 @@
-
-
-function populateGraph(data){
-
+async function populateGraph(){
+	var data = [
+  		{	
+    		x: ['3 Hours Ago', '2 Hours Ago', '1 Hour Ago', 'This Hour'],
+    		y: [3, 4, 1, 6],
+    		type: 'bar'
+  		}
+	];
+	Plotly.newPlot('reportstimechart', data);
 }
 
 
@@ -44,13 +49,13 @@ function getCookie(cname) {
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
   for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
+	var c = ca[i];
+	while (c.charAt(0) == ' ') {
+	  c = c.substring(1);
+	}
+	if (c.indexOf(name) == 0) {
+	  return c.substring(name.length, c.length);
+	}
   }
   return "";
 }
@@ -89,4 +94,5 @@ window.onload = function() {
 	populateDevices();
 	populateConfig();
 	populateReports();
+	populateGraph();
 }
