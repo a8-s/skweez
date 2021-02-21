@@ -1,0 +1,1 @@
+This code was taken from the Google Firebase default Cloud Functions library at https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users
